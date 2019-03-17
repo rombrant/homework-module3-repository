@@ -1,0 +1,128 @@
+.useful {
+    &-section {
+        position: relative;
+    }
+    &-container {
+        position: relative;
+        background-color: white;
+        min-width: 100%;
+        &::before {
+            position: absolute;
+            display: block;
+            content: '';
+            top: 11rem;
+            width: 17rem;
+            min-height: 30rem;
+            background-image: url('../images/content/bagage.jpg');
+            background-repeat: no-repeat;
+            background-position: 55% center;
+            background-size: cover;
+        }
+    }
+}
+
+.skills {
+    padding-top: 0;
+    padding-left: 25%;
+    flex-direction: column;
+    &.title::before {
+        display: none;
+    }
+    & .title-name {
+        margin-top: 5%;
+        line-height: 2.5rem;
+        font-size: 1.5rem;
+        width: 100%;
+    }
+    & .title-about {
+        padding-top: 2rem;
+        padding-right: 5rem;
+        padding-bottom: 2rem;
+        font-size: .8rem;
+        opacity: .7;
+        line-height: 1.5rem;
+        width: 80%;
+    }
+}
+.skill {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  fill: transparent;
+  stroke: #ccc;
+  stroke-width: 10px;
+}
+
+.skill__circle--above {
+    fill: transparent;
+    stroke-width: 18px;
+    stroke-dashoffset: -250;
+    stroke-dasharray: 502;
+}
+.skills-row__title {
+  font-weight: 700;  
+  margin-bottom: 1rem;
+}
+
+.skills-row__item {
+  margin-right: 1rem;  
+  margin-bottom: 1rem;
+    &:nth-child(1) {
+        & .skill__circle--above {
+            stroke-dashoffset: 200;
+        }
+    }
+    &:nth-child(2) {
+        & .skill__circle--above {
+            stroke-dashoffset: 360;
+        }
+    }
+    &:nth-child(3) {
+        & .skill__circle--above {
+            stroke-dashoffset: 300;
+        }
+    }
+    &:nth-child(4) {
+        & .skill__circle--above {
+            stroke-dashoffset: 70;
+        }
+    }
+}
+.user-skills__item {
+    padding-left: 3rem;
+}
+.user-skills__item:nth-child(2) {
+    & .skills-row__item {
+        &:nth-child(1) {
+            & .skill__circle--above {
+                stroke-dashoffset: 10;
+            }
+        }
+        &:nth-child(2) {
+            & .skill__circle--above {
+                stroke-dashoffset: -160;
+            }
+        }
+        &:nth-child(3) {
+            & .skill__circle--above {
+                stroke-dashoffset: 0;
+            }
+        }
+        &:nth-child(4) {
+            & .skill__circle--above {
+                stroke-dashoffset: -70;
+            }
+        }
+    }
+}
+.skills-row__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.skill__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

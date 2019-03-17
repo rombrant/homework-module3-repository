@@ -1,0 +1,100 @@
+.myworks {
+    background-image: url('../images/content/layer-section-mywork.jpg');
+    background-repeat: no-repeat;
+    background-position: 55% center;
+}
+.myworks-trangles {
+    position: relative;
+    height: 80px;
+    transform: rotate(180deg);
+    margin-bottom: -75px;
+    &__item {
+        display: block;
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        fill: #fff;
+    }
+}
+.myworks-title {
+    padding-top: 0;
+    padding-left: 2rem;
+    justify-content: flex-start;
+    & .title-name {
+        font-size: 2rem;
+    }
+    &.title::before{
+        display: none;
+    }
+}
+.myworks-block {
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: row;
+    &__first, &__second {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+.technologies {
+    &-title {
+        flex: 1;
+        padding: 0 20%;
+        flex-direction: column;
+        justify-content: space-between;
+        & .title-name {
+            font-size: 1.5rem;
+            width: 100%;
+            text-align: start;
+            padding-right: 50%;
+            padding-top: 1rem;
+        }
+        &.title::before{
+            display: none;
+        }
+        & .title-about {
+            padding-right: 30%;
+        }
+    }
+    &-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        padding: 0 20%;
+    }
+    &__item {
+        margin-right: 1rem;
+        padding: 5px 12px;
+        background-color: #f2f5f9;
+        border-radius: 15px;
+    }
+}
+.controls {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    &__block {
+        width: 3rem;
+        height: 3rem;
+        background-color: #2d3c4e;
+    }
+    &-up {
+        width: 1rem;
+        height: 1rem;
+        cursor: pointer;
+        background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%);
+        background-repeat: no-repeat;
+        transform:  translate(100%, 75%) rotate(-90deg);
+    }
+    &-down {
+        width: 1rem;
+        height: 1rem;
+        cursor: pointer;
+        background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%);
+        background-repeat: no-repeat;
+        transform: translate(100%, 75%) rotate(90deg);
+    }
+}
