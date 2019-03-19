@@ -16,6 +16,9 @@
         font-size: 2rem; 
         width: 40%;
         text-align: start;
+        @include tablets {
+            width: 60%;
+        }
     }
 }
 .slider {
@@ -24,6 +27,10 @@
     &__item {
         position: relative;
         padding: 3% 9%;
+        @include tablets {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
         &::before {
             position: absolute;
             display: block;
@@ -35,6 +42,11 @@
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
+            @include tablets {
+                width: 2rem;
+                height: 2rem;
+                left: 0;
+            }
         }
     }
 }

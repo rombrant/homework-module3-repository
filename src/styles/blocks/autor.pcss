@@ -4,6 +4,10 @@
     flex-direction: row;
     justify-content: center;
     &.autor {
+        @include tablets {
+            flex-direction: column;
+            align-items: center;
+        }
         & .title-name {
             display: inline-block;
             text-align: start;
@@ -11,6 +15,9 @@
             font-weight: 700;
             line-height: 3rem;
             width: 25%;
+            @include tablets {
+                text-align: center;
+            }
         }
         & .title-about {
             text-align: end;
@@ -18,6 +25,9 @@
             font-weight: 300;
             font-size: 0.8rem;
             line-height: 1.42rem;
+            @include tablets {
+                text-align: center;
+            }
         }
     }
     &-name {

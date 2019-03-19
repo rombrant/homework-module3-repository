@@ -1,22 +1,43 @@
 .useful {
     &-section {
         position: relative;
+        overflow: hidden;
+        min-height: 100%;
+        height: 100%;
     }
     &-container {
         position: relative;
         background-color: white;
         min-width: 100%;
+        @include tablets {
+            &::after {
+                margin: 0 auto;
+                display: block;
+                content: '';
+                top: 11rem;
+                width: 100%;
+                min-height: 20rem;
+                background-image: url('../images/content/bagage.jpg');
+                background-repeat: no-repeat;
+                background-position: 55% center;
+                background-size: contain;
+            }
+        }
         &::before {
             position: absolute;
             display: block;
             content: '';
-            top: 11rem;
+            top: 8rem;
             width: 17rem;
             min-height: 30rem;
             background-image: url('../images/content/bagage.jpg');
             background-repeat: no-repeat;
             background-position: 55% center;
             background-size: cover;
+            @include tablets {
+                position: static;
+                display: none;
+            }
         }
     }
 }
@@ -25,6 +46,11 @@
     padding-top: 0;
     padding-left: 25%;
     flex-direction: column;
+    @include tablets {
+        padding: 0;
+        align-items: center;
+        text-align: center;
+    }
     &.title::before {
         display: none;
     }
@@ -42,6 +68,9 @@
         opacity: .7;
         line-height: 1.5rem;
         width: 80%;
+        @include tablets {
+            padding-left: 5rem;
+        }
     }
 }
 .skill {

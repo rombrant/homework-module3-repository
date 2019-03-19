@@ -41,6 +41,7 @@ html(lang="en")
                 li.socials__item
                   a.social__path(href="https://www.github.com/" aria-label="перейти на гитхаб" target="_blank")
                     +icon('github', 'socials__link')
+              button.burger-menu
             .container
               h1.title.autor 
                 span.title-about Личный сайт веб разработчика
@@ -176,7 +177,7 @@ html(lang="en")
               span.title-name Safin Roman
               p.title-about Личный сайт веб-разработчика
           .footer__second-block
-            +nav('nav',["главная", "обо мне", "навыки", "работы", "отзывы", "связаться"], 0)
+            +nav('footer-nav nav',["главная", "обо мне", "навыки", "работы", "отзывы", "связаться"], 0)
             .footer__second-block-info
               .title.footer-title
                 p.title-about Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
