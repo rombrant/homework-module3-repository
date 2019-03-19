@@ -6,7 +6,7 @@
 }
 .feedback-title {
     padding-top:15%;
-    justify-content: space-between;
+    justify-content: flex-start;
     &.title::before{
         display: none;
     }
@@ -64,7 +64,7 @@
 }
 .feedback-controls {
     &.controls {
-        width: 60%;
+        padding:0;
         justify-content: flex-start;
     }
     & .controls__block {
@@ -76,7 +76,7 @@
     & .controls-up {
         margin: 0 auto;
         background: svg-load('arrow-down.svg', fill=#667183, width=100%, height=100%);
-        transform:  translate(100%, 75%) rotate(180deg);
+        transform:  translate(0, 75%) rotate(180deg);
     }
     & .controls-down {
         background: svg-load('arrow-down.svg', fill=#667183, width=100%, height=100%);

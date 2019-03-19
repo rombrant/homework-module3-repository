@@ -29,25 +29,30 @@ html(lang="en")
         .main
           section.fullscreen-section
             header.header
-              .logo SR
+              span.logo SR
               +nav('nav',["главная", "обо мне", "навыки", "работы", "отзывы", "связаться"], 0)
               ul.socials
                 li.socials__item
-                  +icon('insta', 'socials__link')
+                  a.social__path(href="https://www.instagram.com/" aria-label="перейти в инсгарм" target="_blank")
+                    +icon('insta', 'socials__link')
                 li.socials__item
-                  +icon('vk', 'socials__link')
+                  a.social__path(href="https://www.vk.com/" aria-label="перейти во вкотакте" target="_blank")
+                    +icon('vk', 'socials__link')
                 li.socials__item
-                  +icon('github', 'socials__link')
+                  a.social__path(href="https://www.github.com/" aria-label="перейти на гитхаб" target="_blank")
+                    +icon('github', 'socials__link')
             .container
-              .title.autor 
-                h1.title-name Safin Roman
+              h1.title.autor 
+                span.title-about Личный сайт веб разработчика
+                span.title-name Safin Roman
             .scroll 
-              +icon('scroll', 'scroll__link')
+              button.scroll__button
+                +icon('scroll', 'scroll__link')
           section.fullscreen-section.info-section
             .container
               .info
                 .info__first
-                  +image('content/user.jpg', 'avatar')
+                  +image('content/user.jpg', 'avatar', 'аватар веб разработчика')
                   - 
                     var obj = 
                     {
@@ -60,8 +65,8 @@ html(lang="en")
                         li.userList__item=key
                           span.userList__item_description=value
                 .info__second
-                  .title.title_info
-                    h1.title-name Safin Roman
+                  h2.title.title_info
+                    span.title-name Safin Roman
                     p.title-about Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                     p.title-site Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
         .triangles
@@ -76,7 +81,7 @@ html(lang="en")
         section.fullscreen-section.useful-section
           .container.useful-container
             .title.skills
-                h1.title-name Чем я могу быть полезен вам
+                h2.title-name Чем я могу быть полезен вам
                 p.title-about Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                 ul.user-skills
                   - 
@@ -107,12 +112,12 @@ html(lang="en")
                 h1.title-name Мои Работы
           .myworks-block
             .myworks-block__first
-              +image('content/layer-work.jpg', 'myworks-block__first-img')
-              .controls
+              +image('content/layer-work.jpg', 'myworks-block__first-img', 'макет веб сайта из слайдера проектов')
+              button.controls
                 .controls__block
-                  button.controls-up 
+                  .controls-up 
                 .controls__block
-                  button.controls-down 
+                  .controls-down 
             .myworks-block__second
               ul.technologies-list
                 - 
@@ -120,9 +125,9 @@ html(lang="en")
                 each item in technologies
                   li.technologies__item #{item}
               .title.technologies-title
-                h1.title-name Сайт школы образования
+                h3.title-name Сайт школы образования
                 p.title-about Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                .icon-bg Посмотреть сайт
+                a.icon-bg(href="#" target="_blank") Посмотреть сайт
         .myworks-trangles
           svg.myworks-trangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(
@@ -131,35 +136,35 @@ html(lang="en")
         section.feedback-section
           .container
             .title.feedback-title
-              h1.title-name Что обо мне говорят
-              .controls.feedback-controls 
+              h2.title-name Что обо мне говорят
+              button.controls.feedback-controls 
                 .controls__block
-                  button.controls-up 
+                  .controls-up 
                 .controls__block  
-                  button.controls-down 
+                  .controls-down 
             ul.slider
               each item in persons
                 li.slider__item
                   q.slider__item-quote #{item.quote}
                   .slider__item-person
-                    +image(`content/`+ `${item.path}.jpg`, 'slider__item-person-img')
+                    +image(`content/`+ `${item.path}.jpg`, 'slider__item-person-img', `аватар автора`+ ` ${item.name} отзыва из секции отзывов`)
                     .title.person
-                      h1.title-name #{item.name}
-                      p.title-about #{item.position}
+                      span.title-name #{item.name}
+                      span.title-about #{item.position}
           .container
             .title.contacts-title
-              h1.title-name Связаться со мной
+              span.title-name Связаться со мной
             form.contacts
               .contacts__user
                 label.contacts__label.name 
-                  .contacts__label-block Введите ваше имя
+                  span.contacts__label-block Введите ваше имя
                   input(type="text" name="name" placeholder="Safin Roman").contacts__label-input
                 label.contacts__label.email 
-                  .contacts__label-block Введите ваш email
+                  span.contacts__label-block Введите ваш email
                   input(type="mail" name="mail" placeholder="loftschool@study.com").contacts__label-input
               .contacts__user.message
                 label.contacts__label.textarea 
-                  .contacts__label-block Сообщение к письму
+                  span.contacts__label-block Сообщение к письму
                   textarea(name="message" placeholder="Требуется помощь в создании сайта интересны сроки и цена").contacts__label-textarea
               .contacts__submit
                 button(type="submit").contacts__submit-button Отправить
@@ -168,7 +173,7 @@ html(lang="en")
           .footer__first-block
             .copyright © 2019
             .title.footer-title
-              h1.title-name Safin Roman
+              span.title-name Safin Roman
               p.title-about Личный сайт веб-разработчика
           .footer__second-block
             +nav('nav',["главная", "обо мне", "навыки", "работы", "отзывы", "связаться"], 0)
