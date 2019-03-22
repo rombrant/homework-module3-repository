@@ -3,9 +3,12 @@
     flex-direction: row;
     justify-content: space-around;
     margin: 0 auto;
-    max-width: 60%;
+    max-width: 50%;
     @include tablets {
         max-width: 95%;
+    }
+    @include phones {
+        flex-direction: column;
     }
     &__first {
         margin-right: 3rem;
@@ -13,12 +16,20 @@
         flex-direction: column;
         justify-content: center;
         width: 35%;
+        @include phones {
+            margin: 0 auto;
+            width: 100%;
+        }
     }
     &__second {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 65%;
+        @include phones {
+            margin: 0 auto;
+            width: 100%;
+         }
     }
 }
 .userList {
@@ -70,4 +81,11 @@
     border-radius: 50%;
     width: 10rem;
     height: 10rem;
+}
+.info-section {
+    position: absolute;
+    width: 100%;
+    &.fullscreen-section {
+        top: 20%;
+    }
 }

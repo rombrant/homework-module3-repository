@@ -7,6 +7,11 @@
 .feedback-title {
     padding-top:15%;
     justify-content: flex-start;
+    @include phones {
+        padding-top: 6rem;
+        flex-direction: column;
+        align-items: center;
+    }
     &.title::before{
         display: none;
     }
@@ -19,23 +24,39 @@
         @include tablets {
             width: 60%;
         }
+        @include phones {
+            padding-left: 0;
+            width: 100%;
+            text-align: center;
+        }
     }
 }
 .slider {
     display: flex;
     flex-direction: row;
+    @include phones {
+        min-width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
     &__item {
         position: relative;
-        padding: 3% 9%;
+        padding: 3rem;
         @include tablets {
-            padding-left: 2rem;
-            padding-right: 2rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            width: 100%;
+        }
+        @include phones {
+            padding: 0;
+            min-width: 100%;
+            margin-right: 2rem;
         }
         &::before {
             position: absolute;
             display: block;
             content: '';
-            left: 10%;
+            left: 0;
             width: 3rem;
             height: 3rem;
             background: svg-load('quote.svg', fill=#e5edef, width=100%, height=100%);
@@ -45,7 +66,10 @@
             @include tablets {
                 width: 2rem;
                 height: 2rem;
-                left: 0;
+                left: -1rem;
+            }
+            @include phones {
+                left: -27px;
             }
         }
     }

@@ -5,6 +5,9 @@
 .footer-container {
     display: flex;
     flex-direction: row;
+    @include phones {
+        flex-direction: column;
+    }
 }
 .footer-title {
     flex-direction: column;
@@ -67,6 +70,11 @@
                 padding-top: 0;
             }
 
+        }
+        @include phones {
+            &.socials {
+                display: flex;
+            }
         }
         &.socials {
             width: 100%;

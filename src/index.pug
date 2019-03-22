@@ -15,6 +15,32 @@ include ./mixins.pug
   ]
 
 
+- 
+  var images = [
+    {
+        speed: '0.1',
+        img: 'Sky'
+    },{
+        speed: '0.7',
+        img: 'Mountain'
+    },{
+        speed: '3',
+        img: 'Baloon'
+    },{
+        speed: '2.5',
+        img: 'Cloud'
+    },{
+        speed: '1.8',
+        img: 'Man'
+    },{
+        speed: '1.8',
+        img: 'Mountain1'
+    },{
+        speed: '1',
+        img: 'White'
+    }
+  ]
+
 
 <!DOCTYPE html>
 html(lang="en")
@@ -27,7 +53,11 @@ html(lang="en")
     .wrapper
       .maincontent
         .main
-          section.fullscreen-section
+          .parallax__list 
+            each pic in images
+              .parallax__item(data-speed=pic.speed)
+                +image(`content/`+ `${pic.img}.png`,'parallax__item-img',`parallax's layer of `+ `${pic}`)
+          section.fullscreen-section.wellcome-section
             header.header
               span.logo SR
               +nav('nav',["главная", "обо мне", "навыки", "работы", "отзывы", "связаться"], 0)
@@ -191,5 +221,6 @@ html(lang="en")
               .footer__second-block-info__quotes
                 q.title-about Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                 p.autor-quote Martin Golding
+    
                 
             

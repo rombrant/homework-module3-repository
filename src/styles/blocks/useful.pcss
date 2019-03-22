@@ -71,6 +71,9 @@
         @include tablets {
             padding-left: 5rem;
         }
+        @include phones {
+            padding: 0;
+        }
     }
 }
 .skill {
@@ -80,6 +83,9 @@
   fill: transparent;
   stroke: #ccc;
   stroke-width: 10px;
+  @include phones {
+      margin: 0 auto;
+  }
 }
 
 .skill__circle--above {
@@ -96,6 +102,10 @@
 .skills-row__item {
   margin-right: 1rem;  
   margin-bottom: 1rem;
+  @include phones {
+    width: 50%;
+    margin-right: 0;
+    }
     &:nth-child(1) {
         & .skill__circle--above {
             stroke-dashoffset: 200;
@@ -119,6 +129,10 @@
 }
 .user-skills__item {
     padding-left: 3rem;
+    @include phones {
+        padding: 0;
+        margin: 0 auto;
+    }
 }
 .user-skills__item:nth-child(2) {
     & .skills-row__item {
@@ -148,6 +162,12 @@
   display: flex;
   flex-direction: row;
   justify-content: start;
+  @include tablets {
+      flex-wrap: wrap;
+  }
+  @include phones {
+      flex-wrap: wrap;
+  }
 }
 .skill__title {
     position: absolute;

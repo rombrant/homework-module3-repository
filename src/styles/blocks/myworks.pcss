@@ -2,12 +2,18 @@
     background-image: url('../images/content/layer-section-mywork.jpg');
     background-repeat: no-repeat;
     background-position: 100% 10%;
+    @include phones {
+        width: 100%;
+    }
 }
 .myworks-trangles {
     position: relative;
     height: 80px;
     transform: rotate(180deg);
     margin-bottom: -75px;
+    @include phones {
+        margin-bottom: -6rem;
+    }
     &__item {
         display: block;
         width: 100%;
@@ -34,6 +40,9 @@
     @include tablets {
         flex-direction: column;
     }
+    @include phones {
+        padding-left: 0;
+    }
     &__first, &__second {
         flex: 1;
         display: flex;
@@ -41,6 +50,9 @@
         justify-content: space-between;
         @include tablets {
             width: 85%;
+        }
+        @include phones {
+            width: 100%;
         }
     }
 }
@@ -100,6 +112,9 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    @include phones {
+        padding-left: 70%;
+    }
     &__block {
         width: 3rem;
         height: 3rem;
