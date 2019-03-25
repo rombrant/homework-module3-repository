@@ -11,7 +11,47 @@ include ./mixins.pug
       quote: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
       path: 'vladimir',
       position: 'Преподаватель'
-    }
+    },{
+      name: 'Дмитрий Ковальчук',
+      quote: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
+      path: 'dima',
+      position: 'Основатель Loftschool'
+    },{
+      name: 'Владимир Сабанцев',
+      quote: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+      path: 'vladimir',
+      position: 'Преподаватель'
+    },{
+      name: 'Дмитрий Ковальчук',
+      quote: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
+      path: 'dima',
+      position: 'Основатель Loftschool'
+    },{
+      name: 'Владимир Сабанцев',
+      quote: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+      path: 'vladimir',
+      position: 'Преподаватель'
+    },{
+      name: 'Дмитрий Ковальчук',
+      quote: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
+      path: 'dima',
+      position: 'Основатель Loftschool'
+    },{
+      name: 'Владимир Сабанцев',
+      quote: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+      path: 'vladimir',
+      position: 'Преподаватель'
+    },{
+      name: 'Дмитрий Ковальчук',
+      quote: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
+      path: 'dima',
+      position: 'Основатель Loftschool'
+    },{
+      name: 'Владимир Сабанцев',
+      quote: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+      path: 'vladimir',
+      position: 'Преподаватель'
+    },
   ]
 
 
@@ -30,10 +70,10 @@ include ./mixins.pug
         speed: '2.5',
         img: 'Cloud'
     },{
-        speed: '1.8',
+        speed: '0.5',
         img: 'Man'
     },{
-        speed: '1.8',
+        speed: '0.5',
         img: 'Mountain1'
     },{
         speed: '1',
@@ -56,7 +96,7 @@ html(lang="en")
           .parallax__list 
             each pic in images
               .parallax__item(data-speed=pic.speed)
-                +image(`content/`+ `${pic.img}.png`,'parallax__item-img',`parallax's layer of `+ `${pic}`)
+                +image(`content/`+ `${pic.img}.png`,'parallax__item-img',`parallax's layer of `+ `${pic.img}`)
           section.fullscreen-section.wellcome-section
             header.header
               span.logo SR
@@ -81,7 +121,7 @@ html(lang="en")
                 +icon('scroll', 'scroll__link')
           section.fullscreen-section.info-section
             .container
-              .info
+              .info(data-speed="6")
                 .info__first
                   +image('content/user.jpg', 'avatar', 'аватар веб разработчика')
                   - 
@@ -112,76 +152,40 @@ html(lang="en")
         section.fullscreen-section.useful-section
           .container.useful-container
             .title.skills
-                h2.title-name Чем я могу быть полезен вам
-                p.title-about Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-                ul.user-skills
-                  - 
-                    var skills = [
-                      ['Front-end', ['HTML5', 'CSS3', 'javaScript', 'jQuery и Vue.js']],
-                      ['Workflow', ['git', 'Terminal', 'gulp', 'webpack']],
-                    ]
-                  each item in skills
-                    li.user-skills__item.skills-row
-                      h3.skills-row__title #{item[0]}
-                      ul.skills-row__list
-                        each skill in item[1]
-                          li.skills-row__item
-                            .skill
-                              svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
-                                circle(
-                                  r="80" cx="100" cy="100"
-                                ).skill__circle.skill__circle--under
-                                circle(r="80" cx="100" cy="100"
-                                  ref="color-circle" stroke="url(#gradient)"
-                                ).skill__circle.skill__circle--above
-                                linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                                  stop(offset="0%" stop-color="#5500f2")
-                                  stop(offset="100%" stop-color="#8f00ef")
-                              .skill__title #{skill}
+              h2.title-name Чем я могу быть полезен вам
+              p.title-about Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .values__widget
+              #skills-component
         .container.myworks
           .title.myworks-title
-                h2.title-name Мои Работы
-          .myworks-block
-            .myworks-block__first
-              +image('content/layer-work.jpg', 'myworks-block__first-img', 'макет веб сайта из слайдера проектов')
-              button.controls
-                .controls__block
-                  .controls-up 
-                .controls__block
-                  .controls-down 
-            .myworks-block__second
-              ul.technologies-list
-                - 
-                  var technologies = ['html', 'css', 'javascript']
-                each item in technologies
-                  li.technologies__item #{item}
-              .title.technologies-title
-                h3.title-name Сайт школы образования
-                p.title-about Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                a.icon-bg(href="#" target="_blank") Посмотреть сайт
+            h2.title-name Мои Работы
+          .works__content
+            #slider-component
         .myworks-trangles
           svg.myworks-trangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
             polygon(
               points="0,100 500,0 1000,100"
             )
         section.feedback-section
-          .container
+          .container#reviews
             .title.feedback-title
               h2.title-name Что обо мне говорят
-              button.controls.feedback-controls 
-                .controls__block
+              .controls.feedback-controls 
+                button(@click="previous()").controls__block
                   .controls-up 
-                .controls__block  
+                button(@click="next()").controls__block  
                   .controls-down 
-            ul.slider
+            flickity(ref="flickity" :options="flickityOptions").slider
               each item in persons
-                li.slider__item
+                li.slider__item.carousel-cell
                   q.slider__item-quote #{item.quote}
                   .slider__item-person
                     +image(`content/`+ `${item.path}.jpg`, 'slider__item-person-img', `аватар автора`+ ` ${item.name} отзыва из секции отзывов`)
                     .title.person
                       span.title-name #{item.name}
                       span.title-about #{item.position}
+          .container
+            #reviews-item
           .container
             .title.contacts-title
               span.title-name Связаться со мной
@@ -221,6 +225,7 @@ html(lang="en")
               .footer__second-block-info__quotes
                 q.title-about Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                 p.autor-quote Martin Golding
-    
+
+    include ./templates/entry.pug
                 
             

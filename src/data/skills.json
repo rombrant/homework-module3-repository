@@ -1,0 +1,20 @@
+[
+    {
+      "skillsGroup": "Front-end",
+      "skills": {
+        "HTML5": 30,
+        "CSS3": 50,
+        "Javascript": 75,
+        "Vue.js & jQuery": 30
+      }
+    },
+    {
+      "skillsGroup": "Workflow",
+      "skills": {
+        "Git": 30,
+        "Terminal": 60,
+        "Gulp": 30,
+        "Webpack": 70
+      }
+    }
+  ]

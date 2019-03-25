@@ -5,3 +5,6 @@ if (process.env.NODE_ENV === "development") {
 
 import "./scripts/skills";
 import "./scripts/parallax.js";
+import "./scripts/works.js";
+import "./scripts/flickity.js";
+import "./scripts/reviews.js";

@@ -1,0 +1,11 @@
+script(type="text/x-template")#reviews-components
+    ul.reviews-list
+        li.slider__item.carousel-cell(v-for="review in reviews" :key="review.id")
+            q.slider__item-quote {{review.text}}
+            .slider__item-person
+                //+image(`content/`+ `{{review.author-pic}}`, slider__item-person-img, `аватар автора`+  review.author-name)
+                .title.person
+                    span.title-name {{review.author-name}}
+                    span.title-about {{review.author-occ}}
+
+

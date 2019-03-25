@@ -3,6 +3,16 @@
     height: 200vh;
     width: 100%;
     overflow: hidden;
+    @include tablets {
+        height: 160vh;
+    }
+    @include phones {
+        height: 200vh;
+        background-image: url('../images/content/Mountain_Baloon.png');
+        object-fit: cover;
+        background-position: 70% center;
+        background-size: cover;
+    }
 }
 .parallax__item {
     position: absolute;
@@ -11,6 +21,9 @@
     width: 100%;
     height: 100%;
     will-change: transform;
+    @include phones {
+        display: none;
+    }
     &-img {
         position: absolute;
         will-change: transform;
@@ -26,15 +39,19 @@
     &:nth-child(2) {
         & .parallax__item-img {
             right: 0;
-            top: 17rem;
+            bottom: 0;
         }
     }
     &:nth-child(3) {
         & .parallax__item-img {
             left: 50%;
-            top: 40%;
+            top: 60%;
             width: 11%;
             margin-left: 12%;
+            @include tablets {
+                top: 65%;
+            }
+
         }
     }
     &:nth-child(4) {
@@ -42,6 +59,10 @@
             left: 10%;
             top: 600px;
             width: 80%;
+            @include tablets {
+                top: 50%;
+            }
+
         }
     }
     &:nth-child(5) {
@@ -64,6 +85,10 @@
             bottom: -350px;
             width: 100%;
             left: -300px;
+            @include tablets {
+                bottom: -200px;
+                left: -150px;
+            }
         }
     }
 }
