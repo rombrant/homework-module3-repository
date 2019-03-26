@@ -81,6 +81,17 @@ new Vue({
       const worksAmount = this.works.length - 1;
       if (value > worksAmount) this.currentIndex = 0;
       if (value < 0) this.currentIndex = worksAmount;
+      const container = document.querySelector('.works-slider__thumbs');
+      const wrapper = document.querySelector('.works-slider__thumbs-wrapper');
+      const wrapHeight = wrapper.getBoundingClientRect().height;
+      const curItem = document.querySelector('.works-slider__thumb-item');
+      const curItemHeight = curItem.getBoundingClientRect().height;
+      const curPos = (wrapHeight - curItemHeight)/2;
+      const indexMove = worksAmount - this.currentIndex;
+      const percent = curPos * indexMove;
+      const background = document.querySelector('.works-slider__pics:before');
+      container.style.transform=`translateY(-${percent}px)`;
+      console.log(curPos);
     },
     makeArrWithRequiredImages(data) {
       return data.map(item => {
@@ -94,11 +105,26 @@ new Vue({
       switch (direction) {
         case "next":
           this.currentIndex++;
+          console.log(this.currentIndex);
           break;
         case "prev":
           this.currentIndex--;
+          console.log(this.currentIndex);
           break;
       }
+    },
+    changeActiveClass(event) {
+      const links = document.querySelectorAll('.works-slider__thumb-item');
+      const wrapper = document.querySelector('.works-slider__thumbs-wrapper');
+      Array.from(links).forEach(el => {
+        el.classList.remove('active');
+      });
+      event.parentNode.classList.add('active');
+      console.log(wrapper.getBoundingClientRect().height);
+      const index = [].indexOf.call(links, event.parentNode);
+      const worksAmount = this.works.length - 1;
+      this.currentIndex= worksAmount - index;
+      console.log(this.currentIndex);
     }
   },
   created() {

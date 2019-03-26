@@ -1,11 +1,4 @@
-.myworks {
-    background-image: url('../images/content/layer-section-mywork.jpg');
-    background-repeat: no-repeat;
-    background-position: 100% 10%;
-    @include phones {
-        width: 100%;
-    }
-}
+
 .myworks-trangles {
     position: relative;
     height: 80px;
@@ -60,6 +53,11 @@
     }
 }
 
+.works-slider__thumbs {
+    transform: translateY(0%);
+    transition: transform .8s;
+    will-change: transform;
+}
 .works-slider__tags {
     display: flex;
     flex-direction: row;
@@ -161,16 +159,22 @@
     flex-wrap: wrap;
     &__pics {
         flex: 1;
-        max-width: 100%;
+        max-width: 50%;
+        @include tablets {
+            max-width: 85%;
+        }
     }
     &__data {
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        max-width: 50%;
+        @include tablets {
+            max-width: 100%;
+        }
     }
     &__fullpic {
-
         &-container {
             position: relative;
             overflow: hidden;
@@ -196,7 +200,10 @@
         left: 65%;
         display: flex;
         flex-direction: column;
-        height: 85%;
+        height: 86%;
+        @include phones {
+            height: 83%;
+        }
         & .works-slider__thumb {
             width: 100%;
             &-item{
@@ -227,4 +234,34 @@
 }
 .active {
     border: 2px solid #d9e443de;
+    &.works-slider__fullpic {
+        opacity: 1;
+        transition: .8s;
+    }
+}
+@keyframes bounce {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+.background {
+    position: absolute;
+    display: inline-block;
+    width: 15rem;
+    height: 15rem;
+    content: '3';
+    font-size: 15rem;
+    font-weight: 900;
+    opacity: .3;
+    left: 50%;
+    color: #4b6fd7;
+    @include tablets {
+        left: 85%;
+    }
+    @include phones {
+        top: -15%;
+    }
 }

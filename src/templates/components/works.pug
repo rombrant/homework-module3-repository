@@ -5,6 +5,7 @@ script(type="text/x-template")#slider-container
       :currentWork="currentWork",
       :currentIndex="currentIndex"
       @slide="handleSlide"
+      @change="changeActiveClass"
     )
     info(
       :currentWork="currentWork"
@@ -12,7 +13,8 @@ script(type="text/x-template")#slider-container
 
 script(type="text/x-template")#slider-display
   .works-slider__pics(:data-slide="currentIndex + 1")
-    .works-slider__pics-content
+    .background {{currentIndex + 1}}
+    .works-slider__pics-content 
       .works-slider__fullpic-container
         img(:src="currentWork.photo").works-slider__fullpic
         btns(
@@ -21,6 +23,7 @@ script(type="text/x-template")#slider-display
         thumbs(
           :works="reversedWorks"
           :currentWork="currentWork"
+          @change="event => $emit('change', event)"
         )
 
 script(type="text/x-template")#slider-btns
@@ -35,8 +38,8 @@ script(type="text/x-template")#slider-thumbs
         v-for="work in works" :key="work.id"
         :class="{active: currentWork.id === work.id }"
       )
-        a.works-slider__thumb-link
-          img(:src="work.photo" alt="").works-slider__thumb
+        a(href="#"  @click.prevent="$emit('change', $event.currentTarget)").works-slider__thumb-link
+          img(:src="work.photo" alt="" style= {opacity: "1", transition: ".8s"}).works-slider__thumb
 
 script(type="text/x-template")#slider-info
   .works-slider__data
