@@ -5,10 +5,10 @@
     transform: rotate(180deg);
     margin-bottom: -75px;
     @include tablets {
-        margin-bottom: -10rem;
+        margin-bottom: -5.8rem;
     }
     @include phones {
-        margin-bottom: -10rem;
+        margin-bottom: -7rem;
     }
     &__item {
         display: block;
@@ -185,13 +185,22 @@
         padding: 0 20%;
         font-size: 2rem;
         font-weight: 700;
+        @include phones {
+            padding: 0 10%;
+        }
     }
     &__desc {
         padding: 0 20%;
+        @include phones {
+            padding: 0 10%;
+        }
     }
     &__link {
         padding: 0 20%;
         color: #4b6fd7;
+        @include phones {
+            padding: 0 10%;
+        }
     }
     &__thumbs-wrapper {
         position: absolute;
@@ -200,8 +209,15 @@
         left: 65%;
         display: flex;
         flex-direction: column;
-        height: 86%;
+        height: 90%;
+        @include desktopHd {
+            height: 89%;
+        }
+        @include desktop {
+            height: 90%;
+        }
         @include phones {
+            display: none;
             height: 83%;
         }
         & .works-slider__thumb {
@@ -262,6 +278,7 @@
         left: 85%;
     }
     @include phones {
+        left: 75%;
         top: -15%;
     }
 }

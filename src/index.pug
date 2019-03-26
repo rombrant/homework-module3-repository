@@ -67,7 +67,7 @@ include ./mixins.pug
         speed: '3',
         img: 'Baloon'
     },{
-        speed: '2.5',
+        speed: '1.5',
         img: 'Cloud'
     },{
         speed: '0.5',
@@ -167,23 +167,9 @@ html(lang="en")
               points="0,100 500,0 1000,100"
             )
         section.feedback-section
-          .container#reviews
+          .container
             .title.feedback-title
               h2.title-name Что обо мне говорят
-              .controls.feedback-controls 
-                button(@click="previous()").controls__block
-                  .controls-up 
-                button(@click="next()").controls__block  
-                  .controls-down 
-            flickity(ref="flickity" :options="flickityOptions").slider
-              each item in persons
-                li.slider__item.carousel-cell
-                  q.slider__item-quote #{item.quote}
-                  .slider__item-person
-                    +image(`content/`+ `${item.path}.jpg`, 'slider__item-person-img', `аватар автора`+ ` ${item.name} отзыва из секции отзывов`)
-                    .title.person
-                      span.title-name #{item.name}
-                      span.title-about #{item.position}
           .container
             #reviews-item
           .container

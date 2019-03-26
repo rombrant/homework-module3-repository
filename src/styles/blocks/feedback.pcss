@@ -35,10 +35,8 @@
     }
 }
 .slider {
-    overflow: hidden;
     @include phones {
         min-width: 100%;
-        overflow: hidden;
         position: relative;
     }
     &__item {
@@ -54,7 +52,6 @@
         @include phones {
             padding: 0;
             min-width: 50%;
-            margin-right: 2rem;
         }
         &-quote {
             @include tablets {
@@ -78,7 +75,11 @@
                 height: 2rem;
             }
             @include phones {
-                left: -27px;
+                width: 1rem;
+                height: 1rem;
+                left: 0;
+                margin-top: .2rem;
+
             }
         }
     }
@@ -107,9 +108,21 @@
         text-align: start;
     }
 }
+.slider__item-person-img {
+    margin-top: 2%;
+    width: 3rem;
+    height: 3rem;
+    @include tablets {
+        margin-top: .8rem;
+    }
+    @include phones {
+        margin-top: 2rem;
+    }
+}
 .feedback-controls {
+    
     &.controls {
-        padding:0;
+        padding: 0 0 3rem 40% ;
         justify-content: flex-start;
     }
     & .controls__block {

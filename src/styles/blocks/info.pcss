@@ -86,12 +86,17 @@
     position: absolute;
     width: 100%;
     &.fullscreen-section {
-        top: 18%;
+        @include desktopHd {
+            top: 18%;
+        }
+        @include desktop {
+            top: 12%;
+        }
         @include tablets {
-            top: 13%;
+            top: 16%;
         }
         @include phones {
-            top: 15%;
+            top: 11%;
         }
     }
 }
