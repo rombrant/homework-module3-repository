@@ -11,6 +11,8 @@
         padding-top: 13rem;
     }
     @include phones {
+        padding-left: 2rem;
+        padding-right: 2rem; 
         padding-top: 13rem;
         flex-direction: column;
         align-items: center;
@@ -24,13 +26,19 @@
         font-size: 2rem; 
         width: 40%;
         text-align: start;
+        @include desktopUhd {
+            font-size: 3rem;
+        }
+        @include desktop {
+            font-size: 2rem; 
+        }
         @include tablets {
             width: 60%;
         }
         @include phones {
             padding-left: 0;
             width: 100%;
-            text-align: center;
+            text-align: start;
         }
     }
 }
@@ -44,14 +52,20 @@
         flex-direction: column;
         width: 50%;
         padding-left: 3rem;
+        @include desktopUhd {
+            font-size: 1.2rem;
+        }
+        @include desktop {
+            font-size: .8rem; 
+        }
         @include tablets {
             padding-left: 1rem;
             padding-right: 1rem;
-            min-width: 50%;
+            min-width: 100%;
         }
         @include phones {
             padding: 0;
-            min-width: 50%;
+            margin: 0;
         }
         &-quote {
             @include tablets {
@@ -106,24 +120,40 @@
         font-size: 1rem; 
         width: 100%;
         text-align: start;
+        @include desktopUhd {
+            font-size: 1.5rem;
+        }
+        @include desktopHd {
+            font-size: 1rem; 
+        }
     }
 }
 .slider__item-person-img {
     margin-top: 2%;
     width: 3rem;
     height: 3rem;
+    @include desktopUhd {
+        width: 4rem;
+        height: 4rem;
+        margin: 0;
+    }
+    @include desktop {
+        margin-top: 2%;
+        width: 3rem;
+        height: 3rem;
+    }
     @include tablets {
         margin-top: .8rem;
-    }
-    @include phones {
-        margin-top: 2rem;
     }
 }
 .feedback-controls {
     
     &.controls {
-        padding: 0 0 3rem 40% ;
+        padding: 0 0 3rem 35% ;
         justify-content: flex-start;
+        @include phones {
+            padding: 0 0 3rem 32% ;
+        }
     }
     & .controls__block {
         margin-right: 1rem;

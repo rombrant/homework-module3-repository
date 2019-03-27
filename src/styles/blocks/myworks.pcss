@@ -1,4 +1,10 @@
-
+.myworks {
+    &.container {
+        @include phones {
+            width: 100%;
+        }
+    }
+}
 .myworks-trangles {
     position: relative;
     height: 80px;
@@ -12,18 +18,32 @@
     }
     &__item {
         display: block;
-        width: 100%;
+        width: 120%;
         position: absolute;
         height: 100%;
         fill: #fff;
+        left: -8%;
+        @include phones {
+            left: -8%;
+        }
     }
 }
 .myworks-title {
     padding-top: 0;
     padding-left: 2rem;
+    padding-bottom: 2rem;
     justify-content: flex-start;
     & .title-name {
         font-size: 2rem;
+        @include desktopUhd {
+            font-size: 3rem;
+        }
+        @include desktop {
+            font-size: 2rem;
+        }
+        @include tablets {
+            padding-top: 2rem;
+        }
     }
     &.title::before{
         display: none;
@@ -67,12 +87,21 @@
         padding: 0 10%;
         justify-content: center;
     }
+    @include phones {
+        justify-content: space-between;
+    }
 }
 .works-slider__tag-item {
     margin-right: 1rem;
-    padding: 5px 12px;
+    padding: 8px 15px;
     background-color: #f2f5f9;
     border-radius: 15px;
+    @include desktopUhd {
+        font-size: 1.2rem;
+    }
+    @include desktop {
+        font-size: .8rem;
+    }
 }
 
 
@@ -84,7 +113,7 @@
     flex-direction: row;
     justify-content: flex-end;
     @include phones {
-        padding-left: 70%;
+        transform: translateY(-3rem);
     }
 }
 .works-slider__btn {
@@ -163,6 +192,9 @@
         @include tablets {
             max-width: 85%;
         }
+        @include phones {
+            min-width: 100%;
+        }
     }
     &__data {
         flex: 1;
@@ -185,21 +217,39 @@
         padding: 0 20%;
         font-size: 2rem;
         font-weight: 700;
+        @include desktopUhd {
+            font-size: 2.5rem;
+        }
+        @include desktop {
+            font-size: 2rem;
+        }
         @include phones {
-            padding: 0 10%;
+            padding: 1rem 10%;
         }
     }
     &__desc {
         padding: 0 20%;
+        @include desktopUhd {
+            font-size: 1.2rem;
+        }
+        @include desktop {
+            font-size: .8rem;
+        }
         @include phones {
-            padding: 0 10%;
+            padding: 1rem 10%;
         }
     }
     &__link {
-        padding: 0 20%;
+        padding: 1rem 20%;
         color: #4b6fd7;
+        @include desktopUhd {
+            font-size: 2rem;
+        }
+        @include desktop {
+            font-size: 1.2rem;
+        }
         @include phones {
-            padding: 0 10%;
+            padding: 1rem 10%;
         }
     }
     &__thumbs-wrapper {
@@ -210,11 +260,11 @@
         display: flex;
         flex-direction: column;
         height: 90%;
-        @include desktopHd {
-            height: 89%;
+        @include desktopUhd {
+            height: 91%;
         }
         @include desktop {
-            height: 90%;
+            height: 89%;
         }
         @include phones {
             display: none;
@@ -243,6 +293,14 @@
         background: svg-load('link.svg', fill=#4b6fd7, width=100%, height=100%);
         background-repeat: no-repeat;
         padding-left: 4rem;
+        @include desktopUhd {
+            width: 2rem;
+            height: 2rem;
+        }
+        @include desktop {
+            width: 1rem;
+            height: 1rem;
+        }
     }
 }
 .iconed-link::before::hover {
@@ -274,11 +332,20 @@
     opacity: .3;
     left: 50%;
     color: #4b6fd7;
+    @include desktopUhd {
+        width: 25rem;
+        height: 25rem;
+        font-size: 25rem;
+    }
+    @include desktop {
+        width: 15rem;
+        height: 15rem;
+        font-size: 15rem;
+    }
     @include tablets {
         left: 85%;
     }
     @include phones {
-        left: 75%;
-        top: -15%;
+        display: none;
     }
 }

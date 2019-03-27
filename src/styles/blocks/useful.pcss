@@ -21,6 +21,11 @@
                 background-repeat: no-repeat;
                 background-position: 55% center;
                 background-size: contain;
+                @include phones {
+                    top: 11rem;
+                    width: 60%;
+                    min-height: 10rem;
+                }
             }
         }
         &::before {
@@ -34,6 +39,16 @@
             background-repeat: no-repeat;
             background-position: 55% center;
             background-size: cover;
+            @include desktopUhd {
+                top: 15rem;
+                width: 20rem;
+                min-height: 35rem;
+            }
+            @include desktop {
+                top: 8rem;
+                width: 17rem;
+                min-height: 30rem;
+            }
             @include tablets {
                 position: static;
                 display: none;
@@ -59,6 +74,16 @@
         line-height: 2.5rem;
         font-size: 1.5rem;
         width: 100%;
+        @include desktopUhd {
+            font-size: 2.5rem;
+        }
+        @include desktop {
+            font-size: 1.5rem;
+        }
+        @include phones {
+            padding: 0 2rem;
+            text-align: start;
+        }
     }
     & .title-about {
         padding-top: 2rem;
@@ -68,11 +93,19 @@
         opacity: .7;
         line-height: 1.5rem;
         width: 80%;
+        @include desktopUhd {
+            font-size: 1.2rem;
+        }
+        @include desktop {
+            font-size: .8rem;
+        }
         @include tablets {
             padding-left: 5rem;
+            font-size: 1rem;
         }
         @include phones {
             padding: 0;
+            text-align: start;
         }
     }
 }
@@ -83,6 +116,14 @@
   fill: transparent;
   stroke: #ccc;
   stroke-width: 10px;
+  @include desktopUhd {
+      width: 250px;
+      height: 250px;
+    }
+    @include desktop {
+        width: 150px;
+        height: 150px;
+      }
   @include phones {
       margin: 0 auto;
   }
@@ -114,11 +155,25 @@
         margin: 0 auto;
         width: 50%;
         transform: translateY(-5.5rem);
+        @include desktopUhd {
+            transform: translateY(-8.5rem);
+            font-size: 1.6rem;
+        }
+        @include desktop {
+            transform: translateY(-5.5rem);
+            font-size: 1rem;
+          }
     }
 }
 .skills-row__title {
   font-weight: 700;  
   margin-bottom: 1rem;
+  @include desktopUhd {
+      font-size: 2rem;
+  }
+  @include desktop {
+    font-size: 1.2rem;
+  }
 }
 
 .skills-row__item {
@@ -159,6 +214,12 @@
         &:nth-child(4) {
             & .skill__circle-text {
                 transform: translateY(-6rem);
+                @include desktopUhd {
+                    transform: translateY(-8.5rem);
+                }
+                @include desktop {
+                    transform: translateY(-6rem);
+                  }
             }
         }
     }

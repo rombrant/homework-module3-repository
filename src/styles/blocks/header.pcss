@@ -36,6 +36,12 @@
     &__item {
         padding: 1rem 2rem 0 0;
         list-style: none;
+        @include desktopUhd {
+            font-size: 1.5rem;
+        }
+        @include desktop {
+            font-size: 1rem;
+        }
         &:first-child {
             padding-left: 0;
         }

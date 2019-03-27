@@ -8,6 +8,7 @@
         max-width: 100%;
     }
     @include phones {
+        padding: 0 2rem;
         flex-direction: column;
     }
     &__first {
@@ -19,6 +20,7 @@
         @include phones {
             margin: 0 auto;
             width: 100%;
+            padding: 1rem 0;
         }
     }
     &__second {
@@ -45,6 +47,13 @@
         justify-content: space-between;
         font-size: .8rem;
         font-weight: 500;
+        @include desktopUhd {
+            font-size: 1.2rem;
+        }
+        @include desktop {
+            font-size: .8rem;
+        }
+        
         &_description {
             color: $text-color;
             font-weight: 600;
@@ -62,14 +71,42 @@
         text-align: start;
         font-size: .8rem;
         font-weight: 300;
+        @include desktopUhd {
+            font-size: 1.2rem;
+        }
+        @include desktop {
+            font-size: .8rem;
+        }
+        @include phones {
+            padding: 0 0 1rem 0;
+        }
     }
     & .title-name {
         font-size: 2rem;
         width: 100%;
+        @include desktopUhd {
+            font-size: 2.5rem;
+        }
+        @include desktop {
+            font-size: 2rem;
+        }
+        @include phones {
+            padding-bottom: .5rem;
+        }
     }
     & .title-about, & .title-site {
         font-size: .8rem;
         opacity: .8;
+        @include desktopUhd {
+            font-size: 1.2rem;
+        }
+        @include desktop {
+            font-size: .8rem;
+            opacity: .8;
+        }
+        @include phones {
+            padding-bottom: .5rem;
+        }
     }
     & .title-site {
         font-style: italic;
@@ -86,17 +123,20 @@
     position: absolute;
     width: 100%;
     &.fullscreen-section {
+        @include desktopUhd {
+            top: 25%;
+        }
         @include desktopHd {
             top: 18%;
         }
         @include desktop {
-            top: 12%;
+            top: 15%;
         }
         @include tablets {
-            top: 16%;
+            top: 16.5%;
         }
         @include phones {
-            top: 13%;
+            top: 15%;
         }
     }
 }

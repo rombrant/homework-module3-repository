@@ -1,4 +1,7 @@
 html {
+  @include desktopHd {
+    font-size: 16px;
+  }
   @include desktop {
     font-size: 15px;
   }
@@ -31,7 +34,18 @@ body {
   max-width: 1480px;
   width: 95%;
   // width: 1490px;
-
+  @include desktopUhd {
+    max-width: 2560px;
+  }
+  @include desktopHd {
+    max-width: 1800px;
+  }
+  @include desktop {
+    max-width: 1200px;
+  }
+  @include tablets {
+    max-width: 768px;
+  }
   @include phones {
     width: 95%;
   }
