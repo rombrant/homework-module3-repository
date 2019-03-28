@@ -1,83 +1,28 @@
 include ./mixins.pug
-- 
-  var persons = [
-    {
-      name: 'Дмитрий Ковальчук',
-      quote: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
-      path: 'dima',
-      position: 'Основатель Loftschool'
-    },{
-      name: 'Владимир Сабанцев',
-      quote: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
-      path: 'vladimir',
-      position: 'Преподаватель'
-    },{
-      name: 'Дмитрий Ковальчук',
-      quote: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
-      path: 'dima',
-      position: 'Основатель Loftschool'
-    },{
-      name: 'Владимир Сабанцев',
-      quote: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
-      path: 'vladimir',
-      position: 'Преподаватель'
-    },{
-      name: 'Дмитрий Ковальчук',
-      quote: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
-      path: 'dima',
-      position: 'Основатель Loftschool'
-    },{
-      name: 'Владимир Сабанцев',
-      quote: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
-      path: 'vladimir',
-      position: 'Преподаватель'
-    },{
-      name: 'Дмитрий Ковальчук',
-      quote: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
-      path: 'dima',
-      position: 'Основатель Loftschool'
-    },{
-      name: 'Владимир Сабанцев',
-      quote: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
-      path: 'vladimir',
-      position: 'Преподаватель'
-    },{
-      name: 'Дмитрий Ковальчук',
-      quote: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
-      path: 'dima',
-      position: 'Основатель Loftschool'
-    },{
-      name: 'Владимир Сабанцев',
-      quote: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
-      path: 'vladimir',
-      position: 'Преподаватель'
-    },
-  ]
-
 
 - 
   var images = [
     {
         speed: '0.1',
-        img: 'Sky'
+        img: 'Sky.jpg'
     },{
         speed: '0.7',
-        img: 'Mountain'
+        img: 'Mountain.png'
     },{
         speed: '3',
-        img: 'Baloon'
+        img: 'Baloon.png'
     },{
         speed: '1.5',
-        img: 'Cloud'
+        img: 'Cloud.png'
     },{
         speed: '0.5',
-        img: 'Man'
+        img: 'Man.png'
     },{
         speed: '0.5',
-        img: 'Mountain1'
+        img: 'Mountain1.png'
     },{
         speed: '1',
-        img: 'White'
+        img: 'White.png'
     }
   ]
 
@@ -96,7 +41,7 @@ html(lang="en")
           .parallax__list 
             each pic in images
               .parallax__item(data-speed=pic.speed)
-                +image(`content/`+ `${pic.img}.png`,'parallax__item-img',`parallax's layer of `+ `${pic.img}`)
+                +image(`content/`+ `${pic.img}`,'parallax__item-img',`parallax's layer of `+ `${pic.img}`)
           section.fullscreen-section.wellcome-section
             header.header
               span.logo SR

@@ -91,7 +91,6 @@ new Vue({
       const percent = curPos * indexMove;
       const background = document.querySelector('.works-slider__pics:before');
       container.style.transform=`translateY(-${percent}px)`;
-      console.log(curPos);
     },
     makeArrWithRequiredImages(data) {
       return data.map(item => {
@@ -105,11 +104,9 @@ new Vue({
       switch (direction) {
         case "next":
           this.currentIndex++;
-          console.log(this.currentIndex);
           break;
         case "prev":
           this.currentIndex--;
-          console.log(this.currentIndex);
           break;
       }
     },
@@ -120,16 +117,13 @@ new Vue({
         el.classList.remove('active');
       });
       event.parentNode.classList.add('active');
-      console.log(wrapper.getBoundingClientRect().height);
       const index = [].indexOf.call(links, event.parentNode);
       const worksAmount = this.works.length - 1;
       this.currentIndex= worksAmount - index;
-      console.log(this.currentIndex);
     }
   },
   created() {
     const data = require("../data/works.json");
-    console.log(data);
     this.works = this.makeArrWithRequiredImages(data);
   }
 });

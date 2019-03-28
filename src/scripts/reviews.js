@@ -45,8 +45,7 @@ new Vue({
     },
     created() {
       const data = require("../data/reviews.json");
-      
-      console.log(JSON.stringify(data));
+    
       this.reviews = this.makeArrWithRequiredImages(data);
     }
   });
