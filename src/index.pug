@@ -120,20 +120,20 @@ html(lang="en")
           .container
             .title.contacts-title
               span.title-name Связаться со мной
-            form.contacts
+            form.contacts#myForm
               .contacts__user
                 label.contacts__label.name 
                   span.contacts__label-block Введите ваше имя
-                  input(type="text" name="name" placeholder="Safin Roman").contacts__label-input
+                  input(type="text" name="name" placeholder="Safin Roman" minlength="4" maxlength="8" required).contacts__label-input.client
                 label.contacts__label.email 
                   span.contacts__label-block Введите ваш email
-                  input(type="mail" name="mail" placeholder="loftschool@study.com").contacts__label-input
+                  input(type="email" name="mail" placeholder="loftschool@study.com" minlength="4" maxlength="32"  required).contacts__label-input.mail
               .contacts__user.message
                 label.contacts__label.textarea 
                   span.contacts__label-block Сообщение к письму
-                  textarea(name="message" placeholder="Требуется помощь в создании сайта интересны сроки и цена").contacts__label-textarea
+                  textarea(name="message" placeholder="Требуется помощь в создании сайта интересны сроки и цена" minlength="8" maxlength="150"  type="text" required).contacts__label-textarea.comments
               .contacts__submit
-                button(type="submit").contacts__submit-button Отправить
+                button(type="submit").contacts__submit-button#submit Отправить
       footer.footer
         .container.footer-container
           .footer__first-block
