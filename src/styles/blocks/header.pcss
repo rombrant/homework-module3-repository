@@ -57,9 +57,77 @@
         }
     }
 }
+.popup-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #fff 60%, rgba(255,255,255,0) 100%);
+    transition: .8s;
+    opacity: 0;
+    @include phones {
+        width: 100%;
+    }
+}
+.popup {
+    
+    &.nav {
+        display: block;
+        padding-left: 2rem;
+        padding-top: 35%;
+    }
+    & .nav__list {
+        flex-direction: column;
+        height: 100%;
+    }
+    &.socials {
+        width: 100%;
+        padding: 4rem 0 0 2rem;
+        justify-content: flex-start;
+        max-height: 30%;
+        @include phones {
+            display: flex;
+        }
+    }
+}
+.burgers-menu-closed {
+    background-color: transparent;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    @include tablets {
+        margin-top: 0.7rem;
+        margin-right: 2rem;
+    }
+    @include phones {
+        margin-top: 0.3rem;
+        margin-right: 0.7rem;
+    }
+    &:before, &:after {
+        top: 0.5rem;
+        position: absolute;
+        left: 0.8rem;
+        content: ' ';
+        height: 2rem;
+        width: 5px;
+        background-color: $text-color;
+        }
+        &:before {
+        transform: rotate(45deg);
+        }
+        &:after {
+        transform: rotate(-45deg);
+        }
+    }
 .socials {
     padding-top: 1rem;
-    padding-right: 2rem;
+    padding-right: 4rem;
     width: 15%;
     display: flex;
     flex-direction: row;
@@ -82,7 +150,9 @@
 }
 .burger-menu {
     display: none;
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 2rem;
     height: .4rem;
     margin: 1.7rem 2rem 0 0;
