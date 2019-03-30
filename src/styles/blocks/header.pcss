@@ -1,7 +1,22 @@
+
+.wellcome-section {
+    position: absolute;
+    width: 100%;
+    &.fullscreen-section {
+        top: 0;
+        width: 100%;
+    }
+}
+
 .header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
+    @include tablets {
+        justify-content: space-between;
+    }
+
 }
 .logo {
     padding-left: 2rem;
@@ -11,6 +26,10 @@
 }
 .nav {
     flex:1;
+    @include tablets {
+        display: none;
+    }
+
     &__list {
         display: flex;
         flex-direction: row;
@@ -22,6 +41,14 @@
     &__item {
         padding: 1rem 2rem 0 0;
         list-style: none;
+
+        @include desktopUhd {
+            font-size: 1.5rem;
+        }
+        @include desktop {
+            font-size: 1rem;
+        }
+
         &:first-child {
             padding-left: 0;
         }
@@ -37,18 +64,130 @@
         }
     }
 }
+.popup-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #fff 60%, rgba(255,255,255,0) 100%);
+    transition: .8s;
+    opacity: 0;
+    @include phones {
+        width: 100%;
+    }
+}
+.popup {
+    
+    &.nav {
+        display: block;
+        padding-left: 2rem;
+        padding-top: 35%;
+    }
+    & .nav__list {
+        flex-direction: column;
+        height: 100%;
+    }
+    &.socials {
+        width: 100%;
+        padding: 4rem 0 0 2rem;
+        justify-content: flex-start;
+        max-height: 30%;
+        @include phones {
+            display: flex;
+        }
+    }
+}
+.burgers-menu-closed {
+    background-color: transparent;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    @include tablets {
+        margin-top: 0.7rem;
+        margin-right: 2rem;
+    }
+    @include phones {
+        margin-top: 0.3rem;
+        margin-right: 0.7rem;
+    }
+    &:before, &:after {
+        top: 0.5rem;
+        position: absolute;
+        left: 0.8rem;
+        content: ' ';
+        height: 2rem;
+        width: 5px;
+        background-color: $text-color;
+        }
+        &:before {
+        transform: rotate(45deg);
+        }
+        &:after {
+        transform: rotate(-45deg);
+        }
+    }
 .socials {
     padding-top: 1rem;
-    padding-right: 2rem;
-    width: 10%;
+    padding-right: 4rem;
+    width: 15%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    @include tablets {
+        flex: 1;
+        justify-content: flex-end;
+    }
+    @include phones {
+        display: none;
+    }
     &__item {
-        width: 1.3rem;
-        height: 1.3rem;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 5%;
     }
     &__link {
         fill: $text-color;
+    }
+}
+.burger-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2rem;
+    height: .4rem;
+    margin: 1.7rem 2rem 0 0;
+    background-color: #414c63;
+    padding: 0;
+    @include tablets {
+        display: block;
+    }
+    &::before {
+        position: absolute;
+        display: block;
+        margin: 0;
+        top: -10px;
+        left: 0;
+        content: '';
+        width: 2rem;
+        height: .4rem;
+        background-color: #414c63;
+    }
+    &::after {
+        position: absolute;
+        display: block;
+        margin: 0;
+        top: 10px;
+        left: 0;
+        content: '';
+        width: 2rem;
+        height: .4rem;
+        background-color: #414c63;
     }
 }

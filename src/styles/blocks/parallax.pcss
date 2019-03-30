@@ -1,0 +1,136 @@
+.parallax__list {
+    position: relative;
+    height: 200vh;
+    width: 100%;
+    overflow: hidden;
+    @include desktopUhd {
+        height: 150vh;
+    }
+    @include desktopHd {
+        height: 150vh;
+    }
+    @include desktop {
+        height: 150vh;
+    }
+    @include tablets {
+        height: 125vh;
+    }
+    @include phones {
+        height: 150vh;
+        background-image: url('../images/content/Mountain_Baloon.png');
+        object-fit: cover;
+        background-position: 70% center;
+        background-size: cover;
+    }
+}
+.parallax__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    @include phones {
+        display: none;
+    }
+    &-img {
+        position: absolute;
+        will-change: transform;
+    }
+    &:nth-child(1) {
+        & .parallax__item-img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            top: -10%;
+        }
+    }
+    &:nth-child(2) {
+        & .parallax__item-img {
+            right: 0;
+            bottom: 0;
+            @include tablets {
+                bottom: 20%;
+            }
+        }
+    }
+    &:nth-child(3) {
+        & .parallax__item-img {
+            left: 50%;
+            top: 30%;
+            width: 11%;
+            margin-left: 12%;
+            @include desktopHd {
+                top: 40%;
+            }
+            @include tablets {
+                top: 55%;
+            }
+
+        }
+    }
+    &:nth-child(4) {
+        & .parallax__item-img {
+            left: 10%;
+            top: 30%;
+            width: 80%;
+            @include tablets {
+                top: 50%;
+            }
+
+        }
+    }
+    &:nth-child(5) {
+        & .parallax__item-img {
+            left: 0;
+            bottom: 100px;
+            width: 75%;
+            @include desktopUhd {
+                bottom: -3%;
+            }
+            @include desktopHd {
+                bottom: -3%;
+            }
+            @include tablets {
+                bottom: 10%;
+            }
+        }
+    }
+    &:nth-child(6) {
+        & .parallax__item-img {
+            right: 0;
+            bottom: 0;
+            width: 75%;
+            @include desktopUhd {
+                bottom: -5%;
+            }
+            @include desktopHd {
+                bottom: -5%;
+            }
+            @include tablets {
+                bottom: 10%;
+            }
+        }
+    }
+    &:nth-child(7) {
+        width: 150vw;
+        & .parallax__item-img {
+            bottom: -350px;
+            width: 100%;
+            left: -300px;
+            @include desktopUhd {
+                bottom: -65%;
+            }
+            @include desktopHd {
+                bottom: -45%;
+            }
+            @include desktop {
+                bottom: -47%;
+            }
+            @include tablets {
+                bottom: -20%;
+                left: -175px;
+            }
+        }
+    }
+}

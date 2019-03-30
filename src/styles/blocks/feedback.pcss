@@ -7,6 +7,17 @@
 .feedback-title {
     padding-top:15%;
     justify-content: flex-start;
+
+    @include tablets {
+        padding-top: 13rem;
+    }
+    @include phones {
+        padding-left: 2rem;
+        padding-right: 2rem; 
+        padding-top: 13rem;
+        flex-direction: column;
+        align-items: center;
+    }
     &.title::before{
         display: none;
     }
@@ -16,33 +27,83 @@
         font-size: 2rem; 
         width: 40%;
         text-align: start;
+        @include desktopUhd {
+            font-size: 3rem;
+        }
+        @include desktop {
+            font-size: 2rem; 
+        }
+        @include tablets {
+            width: 60%;
+        }
+        @include phones {
+            padding-left: 0;
+            width: 100%;
+            text-align: start;
+        }
     }
 }
 .slider {
-    display: flex;
-    flex-direction: row;
-    &__item {
+    @include phones {
+        min-width: 100%;
         position: relative;
-        padding: 3% 9%;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding-left: 3rem;
+        @include desktopUhd {
+            font-size: 1.2rem;
+        }
+        @include desktop {
+            font-size: .8rem; 
+        }
+        @include tablets {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            min-width: 100%;
+        }
+        @include phones {
+            padding: 0;
+            margin: 0;
+        }
+        &-quote {
+            @include tablets {
+                padding-left: 1rem;
+            }
+        }
         &::before {
             position: absolute;
             display: block;
             content: '';
-            left: 10%;
+            left: 0;
             width: 3rem;
             height: 3rem;
-            background: svg-load('quote.svg', fill=#e5edef, width=100%, height=100%);
+            background: svg-load('quote.svg', fill=#0a51a191, width=100%, height=100%);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
+            opacity: .5;
+            @include tablets {
+                width: 2rem;
+                height: 2rem;
+            }
+            @include phones {
+                width: 1rem;
+                height: 1rem;
+                left: 0;
+                margin-top: .2rem;
+
+            }
         }
     }
 }
 .slider__item-person {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     &-img {
+        height: 100%;
         border-radius: 50%;
     }
 }
@@ -60,12 +121,40 @@
         font-size: 1rem; 
         width: 100%;
         text-align: start;
+        @include desktopUhd {
+            font-size: 1.5rem;
+        }
+        @include desktopHd {
+            font-size: 1rem; 
+        }
+    }
+}
+.slider__item-person-img {
+    margin-top: 2%;
+    width: 3rem;
+    height: 3rem;
+    @include desktopUhd {
+        width: 4rem;
+        height: 4rem;
+        margin: 0;
+    }
+    @include desktop {
+        margin-top: 2%;
+        width: 3rem;
+        height: 3rem;
+    }
+    @include tablets {
+        margin-top: .8rem;
     }
 }
 .feedback-controls {
+    
     &.controls {
-        padding:0;
+        padding: 0 0 3rem 35% ;
         justify-content: flex-start;
+        @include phones {
+            padding: 0 0 3rem 32% ;
+        }
     }
     & .controls__block {
         margin-right: 1rem;
@@ -76,10 +165,10 @@
     & .controls-up {
         margin: 0 auto;
         background: svg-load('arrow-down.svg', fill=#667183, width=100%, height=100%);
-        transform:  translate(0, 75%) rotate(180deg);
+        transform:  translate(0, 0) rotate(180deg);
     }
     & .controls-down {
         background: svg-load('arrow-down.svg', fill=#667183, width=100%, height=100%);
-        transform:  translate(100%, 75%) rotate(0);
+        transform:  translate(75%, 0) rotate(0);
     }
 }

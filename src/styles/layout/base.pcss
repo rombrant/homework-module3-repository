@@ -1,4 +1,7 @@
 html {
+  @include desktopHd {
+    font-size: 16px;
+  }
   @include desktop {
     font-size: 15px;
   }
@@ -25,24 +28,31 @@ body {
   min-height: 100%;
   position: relative;
 }
-
+.main {
+  position:relative;
+}
 .container {
   margin: 0 auto;
   max-width: 1480px;
   width: 95%;
   // width: 1490px;
-
+  @include desktopUhd {
+    max-width: 2560px;
+  }
+  @include desktopHd {
+    max-width: 1800px;
+  }
+  @include desktop {
+    max-width: 1200px;
+  }
+  @include tablets {
+    max-width: 768px;
+  }
   @include phones {
-    width: 85%;
+    width: 95%;
   }
 }
 
-.main {
-  background-image: url('../images/content/Mountain_Baloon.png');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 .info-section {
   display:flex;
@@ -53,6 +63,7 @@ body {
 .fullscreen-section {
   height: 100vh;
   min-height: 650px;
+  position: relative;
 }
 
 button {

@@ -3,14 +3,38 @@
     display: flex;
     flex-direction: column;
     width: 80%;
+    @include tablets {
+        width: 100%;
+    }
+    @include phones {
+        padding-left: 0;
+    }
     &__user {
         display: flex;
         flex-direction: row;
+        @include phones {
+            flex-direction: column;
+        }
     }
     &-title {
         padding-top: 10%;
         padding-left: 2rem;
         justify-content: flex-start;
+        & .title-name {
+            @include desktopUhd {
+                font-size: 3rem;
+            }
+            @include desktop {
+                font-size: 2rem;
+            }
+        }
+        
+        @include tablets {
+            justify-content: center;
+        }
+        @include phones {
+            padding-left: 0;
+        }
     }
     &__label {
         height: 6rem;
@@ -25,11 +49,29 @@
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
+            @include desktopUhd {
+                width: 2.3rem;
+                height: 2.3rem;
+            }
+            @include desktop {
+                width: 1.8rem;
+                height: 1.8rem;
+            }
         }
         &-block {
             font-size: .7rem;
             color: rgba( 0, 0,  199, .3);
             padding-left: 2.5rem;
+            @include desktopUhd {
+                font-size: 1.2rem;
+            }
+            @include desktop {
+                font-size: .7rem; 
+            }
+            @include phones {
+                min-width: 100%;
+                padding-left: 43%;
+            }
         }
         &-input, &-textarea {
             padding-left: 2.5rem;
@@ -38,11 +80,23 @@
             font-weight: 700;
             line-height: 2rem;
             overflow: hidden;
+            @include desktopUhd {
+                font-size: 1.5rem;
+            }
+            @include desktop {
+                font-size: .8rem; 
+            }
+            @include phones {
+                text-align: center;
+            }
         }
         &-input {
             display: block;
             position: relative;
             background-color: transparent;
+            @include phones {
+                width: 100%;
+            }
         }
         &-textarea {
             width: 100%;
@@ -56,6 +110,9 @@
     &.contacts__label::before {
         background: svg-load('user.svg', fill=#d3ddee, width=100%, height=100%);
     }
+    @include phones {
+        width: 100%;
+    }
 }
 .email {
     width: 50%;
@@ -63,11 +120,22 @@
     &.contacts__label::before {
         background: svg-load('envelope.svg', fill=#d3ddee, width=100%, height=100%);
     }
+    @include tablets {
+        margin-left: 1rem;
+    }
+    @include phones {
+        margin-left: 0;
+        width: 100%;
+    }
+
 }
 .textarea {
     width: 90%;
     &.contacts__label::before {
         background: svg-load('message.svg', fill=#d3ddee, width=100%, height=100%);
+    }
+    @include phones {
+        width: 100%;
     }
 }
 .contacts__submit {
@@ -81,6 +149,15 @@
         font-weight: 700;
         color: #fff;
         background-image: linear-gradient(to right, #ad00ed 0%, #5500f2 100%);
+        @include desktopUhd {
+            font-size: 1.5rem;
+        }
+        @include desktop {
+            font-size: 1rem; 
+        }
     }
 
+}
+.error {
+    border: 2px solid #ff0000;
 }
