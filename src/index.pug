@@ -1,4 +1,20 @@
 include ./mixins.pug
+- 
+  var persons = [
+    {
+      name: 'Дмитрий Ковальчук',
+      quote: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!',
+      path: 'dima',
+      position: 'Основатель Loftschool'
+    },{
+      name: 'Владимир Сабанцев',
+      quote: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах',
+      path: 'vladimir',
+      position: 'Преподаватель'
+    }
+  ]
+
+
 
 - 
   var images = [
@@ -156,7 +172,8 @@ html(lang="en")
               .footer__second-block-info__quotes
                 q.title-about Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                 p.autor-quote Martin Golding
-
+                
     include ./templates/entry.pug
+
                 
             

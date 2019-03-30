@@ -1,3 +1,4 @@
+
 .wellcome-section {
     position: absolute;
     width: 100%;
@@ -6,13 +7,16 @@
         width: 100%;
     }
 }
+
 .header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
     @include tablets {
         justify-content: space-between;
     }
+
 }
 .logo {
     padding-left: 2rem;
@@ -25,6 +29,7 @@
     @include tablets {
         display: none;
     }
+
     &__list {
         display: flex;
         flex-direction: row;
@@ -36,12 +41,14 @@
     &__item {
         padding: 1rem 2rem 0 0;
         list-style: none;
+
         @include desktopUhd {
             font-size: 1.5rem;
         }
         @include desktop {
             font-size: 1rem;
         }
+
         &:first-child {
             padding-left: 0;
         }
