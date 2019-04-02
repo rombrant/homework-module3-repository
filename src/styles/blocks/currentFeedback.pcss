@@ -1,0 +1,80 @@
+.current__feedback__list {
+    &.current__list {
+        justify-content:flex-start; 
+    }
+    & .adder {
+        height: 18rem;
+    }
+    & .current__list-tusk {
+        margin-right: 2rem;
+    }
+    & .tusk__item-add-work-title {
+        top: 75%;
+        left: 32.5%;
+    }
+    & .tusk__item-add-work:before {
+        left: 32.5%;
+    }
+}
+.admin-feedback {
+    border-bottom: 1px solid rgba(0,0,0, .2); 
+    &.tusk__item {
+        padding: 1rem 0;
+        margin: .5rem;
+        display: flex;
+        flex-direction: row;
+    }
+    & .tusk__item-img {
+        width: 3rem;
+        height: 3rem;
+    }
+    & .title {
+        flex-direction: column;
+        padding: 0;
+        &-name {
+            font-size: 1rem;
+            line-height: 1.42rem;
+        }
+    }
+}
+.editor__description-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.feedback__editor {
+    &.editor__description {
+        width: 60%;
+    }
+    &.editor__upload {
+        width: 25%;
+    }
+    & .editor__upload-background {
+        background:none;
+        border: none;
+    }
+    & .editor__upload-info  {
+        background-color: rgba(58, 115, 223, .4);
+        border-radius: 50%;
+        width: 8rem;
+        height: 8rem;
+        padding: 0;
+        position: relative;
+    }
+    & .editor__upload-info:before {
+        display: block;
+        position: absolute;
+        top: 13%;
+        left: 13%;
+        content: '';
+        margin: 0 auto;
+        width: 6rem;
+        height: 6rem;
+        background: svg-load('user.svg', fill=rgba(255, 255, 255, 0.4), width=100%, height=100%);
+    }
+    & .editor__upload-downloader {
+        background: none;
+        color: #383bcf;
+        font-weight: 500;
+    }
+}

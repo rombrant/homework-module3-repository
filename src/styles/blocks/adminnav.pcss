@@ -1,0 +1,22 @@
+.works__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 2rem;
+    &-item {
+        padding: 1.5rem 2rem;
+        color: #43436b;
+        opacity: .7;
+        border-bottom: 3px solid transparent;
+        &--active {
+            border-bottom: 3px solid #383bcf;
+            color: #383bcf;
+            font-weight: 700;
+        }
+        &:hover {
+            border-bottom: 3px solid #383bcf;
+            color: #383bcf;
+            font-weight: 700;
+        }
+    }
+}
