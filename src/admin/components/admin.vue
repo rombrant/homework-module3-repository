@@ -26,7 +26,7 @@
                       ]
         each work in works
           li.works__list-item
-            router-link(to=`/admin`+`${work.link}`).works__list-item-link #{work.name}
+            router-link(to=`/administrator`+`${work.link}`).works__list-item-link #{work.name}
     .active__block
       router-view
 </template>

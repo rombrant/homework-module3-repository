@@ -35,7 +35,7 @@
         span.tusk__item-add-work-title Добавить работу
     li.current__list-tusk.admin-works
       .tusk__item.tusk__item-works
-        img(src='../../images/content/slider-1.jpg').tusk__item-img
+        img(src='images/content/slider-3.jpg').tusk__item-img
         ul.tags
           span.tags-technologies Html5
           span.tags-technologies CSS3
@@ -49,7 +49,7 @@
           button.tusk__item__content-buttons-remover Удалить
     li.current__list-tusk.admin-works
       .tusk__item.tusk__item-works
-        img(src='../../images/content/slider-2.jpg').tusk__item-img
+        img(src='images/content/slider-3.jpg').tusk__item-img
         ul.tags
           span.tags-technologies Html5
           span.tags-technologies CSS3
@@ -63,7 +63,7 @@
           button.tusk__item__content-buttons-remover Удалить
     li.current__list-tusk.admin-works
       .tusk__item.tusk__item-works
-        img(src='../../images/content/slider-3.jpg').tusk__item-img
+        img(src='images/content/slider-3.jpg').tusk__item-img
         ul.tags
           span.tags-technologies Html5
           span.tags-technologies CSS3
@@ -77,7 +77,7 @@
           button.tusk__item__content-buttons-remover Удалить
     li.current__list-tusk.admin-works
       .tusk__item.tusk__item-works
-        img(src='../../images/content/slider-4.jpg').tusk__item-img
+        img(src='images/content/slider-3.jpg').tusk__item-img
         ul.tags
           span.tags-technologies Html5
           span.tags-technologies CSS3
@@ -91,7 +91,7 @@
           button.tusk__item__content-buttons-remover Удалить
     li.current__list-tusk.admin-works
       .tusk__item.tusk__item-works
-        img(src='../../images/content/slider-5.jpg').tusk__item-img
+        img(src='images/content/slider-3.jpg').tusk__item-img
         ul.tags
           span.tags-technologies Html5
           span.tags-technologies CSS3

@@ -11,17 +11,17 @@ import works from './components/works.vue';
 
 const routes = [
   {
-    path: '/administrator/skills',
+    path: '/admin/skills',
     component: skills,
     name: 'skills'
   },
   {
-    path: '/administrator/reviews',
+    path: '/admin/reviews',
     component: reviews,
     name: 'reviews'
   },
   {
-    path: '/administrator/works',
+    path: '/admin/works',
     component: works,
     name: 'works'
   },
