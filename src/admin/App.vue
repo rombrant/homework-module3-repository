@@ -80,6 +80,12 @@ export default {
   },
   methods: {
     login() {
+      this.$validate()
+        .then(function (success) {
+        if (success) {
+        alert('Validation succeeded!');
+        }
+      });
       this.disableSubmit=true;
       setTimeout(function() {
         this.disableSubmit=false;
