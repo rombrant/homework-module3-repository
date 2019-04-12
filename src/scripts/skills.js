@@ -1,19 +1,23 @@
 import Vue from "vue";
+import axios from "axios";
+import user from '../admin/store/modules/user';
 
 const skill = {
   template: "#skill",
   props: {
-    skillName: String,
-    skillPercent: Number
+    title: String,
+    percent: Number,
+    skillId: Number,
+    categoryId: Number
   },
   methods: {
     drawColoredCircle() {
       const circle = this.$refs["color-circle"];
       const dashArray = getComputedStyle(circle).getPropertyValue("stroke-dasharray");
   
-      const percent = (parseInt(dashArray) / 100) * (100 - this.skillPercent);
+      const cirPercent = (parseInt(dashArray) / 100) * (100 - this.percent);
 
-      circle.style.strokeDashoffset = percent;
+      circle.style.strokeDashoffset = cirPercent;
     }
   },
   mounted() {
@@ -27,7 +31,18 @@ const skillsRow = {
     skill
   },
   props: {
-    skill: Object
+    category: Object,
+    categoryId: Number
+  },
+data() {
+  return {
+    skills: {}
+    };
+  },
+created() {
+      axios.get(`https://webdev-api.loftschool.com/skills/121`).then(response=>{
+      this.skills = response.data;
+    });
   }
 };
 
@@ -39,11 +54,15 @@ new Vue({
   },
   data() {
     return {
-      skills: {}
+      categories: {}
     };
   },
   created() {
-    const data = require("../data/skills.json");
-    this.skills = data;
+    axios.get(`https://webdev-api.loftschool.com/categories/121`).then(response=>{
+        this.categories = response.data;
+    });
+    axios.get(`https://webdev-api.loftschool.com/skills/121`).then(response=>{
+        this.skills = response.data;
+    });
   }
 });
