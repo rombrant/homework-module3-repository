@@ -5,6 +5,7 @@
   "bp-desktop-uhd": "2560px",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1400px",
+  "bp-laptop": "1100px",
   "bp-tablets": "768px",
   "bp-phones": "480px"
 }

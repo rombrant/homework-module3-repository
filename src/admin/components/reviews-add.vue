@@ -170,16 +170,20 @@ export default {
       this.renderedAvatar = "";
     },
     fillFormWithCurrentReviewData() {
+
       this.review = { ...this.currentReview };
+      console.log(this.review);
       this.renderedAvatar = getAbsoluteImgPath(this.currentReview.photo);
+      
     },
     async handlePhotoUpload(e) {
       const file = e.target.files[0];
       this.review.photo = file;
-
+      console.log(this.review.photo);
       try {
         const renderedResult = await renderer(file);
         this.renderedAvatar = renderedResult;
+        console.log(this.renderedAvatar);
       } catch (error) {
         this.showTooltip({
           type: "error",
@@ -275,7 +279,7 @@ export default {
     content: "";
     height: 115px;
     width: 85px;
-    background: svg-load("filled-user.svg", fill=#fff) center center no-repeat;
+    background: svg-load("user.svg", fill=#fff) center center no-repeat;
     display: block;
     position: absolute;
     top: 50%;
