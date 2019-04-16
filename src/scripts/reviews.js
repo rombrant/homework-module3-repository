@@ -1,13 +1,21 @@
 import Vue from "vue";
-import { stringify } from "postcss";
 import Flickity from 'vue-flickity';
+import axios from "axios";
+
+const review = {
+  template: "#review",
+  props: {
+    review: Object
+  }
+};
 
 
 new Vue({
     el: "#reviews-item",
     template: "#reviews-components",
     components: {
-      Flickity
+      Flickity,
+      review
     },
     props: {
         name: String,
@@ -16,21 +24,22 @@ new Vue({
       },
     data() {
       return {
+        reviews: "",
         flickityOptions: {
+          initialIndex: 0,
           prevNextButtons: false,
           pageDots: false,
-          groupCells: true,
+          groupCells: true
           
-          reviews: []
+          
         }
       }
     }, 
-    
     methods: {
       makeArrWithRequiredImages(data) {
         return data.map(item => {
-          const requiredPic = require(`../images/content/${item.authorPic}`);
-          item.authorPic = requiredPic;
+          const absolutePic = `https://webdev-api.loftschool.com/${item.photo}`;
+          item.photo = absolutePic;
   
           return item;
         });
@@ -44,8 +53,10 @@ new Vue({
       }
     },
     created() {
-      const data = require("../data/reviews.json");
-    
-      this.reviews = this.makeArrWithRequiredImages(data);
-    }
+      axios.get('https://webdev-api.loftschool.com/reviews/121')
+      .then(response => {
+        const data = response.data;
+        this.reviews = this.makeArrWithRequiredImages(data);
+      });
+     }
   });

@@ -38,11 +38,11 @@ export default {
     ...mapActions("tooltips", ["showTooltip"]),
     ...mapMutations("reviews", ["SET_CURRENT_REVIEW"]),
     updateWork() {
-      this.SET_CURRENT_REVIEW(this.review.id);
+      this.SET_CURRENT_REVIEW(this.review);
       this.$emit("updateWork");
     },
     async removeExistedReview() {
-      if (confirm('Удалить отзыв?') === false)
+      if (confirm('Удалить отзыв?') === true)
       try {
         const response = await this.removeReview(this.review.id);
 

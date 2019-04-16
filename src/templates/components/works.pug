@@ -44,15 +44,16 @@ script(type="text/x-template")#slider-thumbs
 script(type="text/x-template")#slider-info
   .works-slider__data
     tags(
-      :tagsArray="tagsArray"
+      :tags="currentWork.techs"
     )
     .works-slider__title {{currentWork.title}}
     .works-slider__desc
-      p {{currentWork.desc}}
+      p {{currentWork.description}}
     .works-slider__link 
       a(:href="currentWork.link").iconed-link Посмотреть сайт
 
 script(type="text/x-template")#slider-tags
   ul.works-slider__tags
-    li.works-slider__tag-item(v-for="tag in tagsArray")
+    li.works-slider__tag-item(
+      v-for="(tag, index) in tagArray" :key="index")
       .tag {{tag}}

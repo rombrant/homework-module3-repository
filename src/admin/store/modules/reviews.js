@@ -14,11 +14,16 @@ export default {
     ADD_REVIEW: (state, newReview) => {
       state.reviews.push(newReview);
     },
-    REMOVE_REVIEW: (state, deletedReviewlId) => {
+    REMOVE_REVIEW: (state, deletedReviewId) => {
       state.reviews = state.reviews.filter(review => review.id !== deletedReviewId);
     },
-    SET_CURRENT_REVIEW: (state, curReviewId) => {
-      state.currentReview = state.reviews.filter(review => review.id === curReviewId);
+    EDIT_REVIEW: (state, editedReview) => {
+      state.reviews = state.reviews.map(review =>
+        review.id === editedReview.id ? editedReview : review
+      );
+    },
+    SET_CURRENT_REVIEW: (state, review) => {
+      state.currentReview = {...review};
     }
   },
   actions: {
@@ -62,7 +67,7 @@ export default {
     async updateReview({ commit }, review) {
       try {
         const response = await this.$axios.post(`/reviews/${review.id}`, review);
-        commit('ADD_REVIEW', response.data.review);
+        commit('EDIT_REVIEW', response.data.review);
         return response;
       } catch (error) {
         // error handling

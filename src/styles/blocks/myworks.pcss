@@ -1,7 +1,10 @@
 .myworks {
     &.container {
+        padding-bottom: 8rem;
+        padding-top: 8rem;
         @include phones {
             width: 100%;
+            
         }
     }
 }
@@ -187,6 +190,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     &__pics {
+        object-fit: fill;
         flex: 1;
         max-width: 50%;
         @include tablets {
@@ -261,7 +265,7 @@
         flex-direction: column;
         height: 90%;
         @include desktopUhd {
-            height: 91%;
+            height: 92.5%;
         }
         @include desktop {
             height: 89%;
