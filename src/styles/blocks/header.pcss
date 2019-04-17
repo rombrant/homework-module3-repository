@@ -7,7 +7,44 @@
         width: 100%;
     }
 }
-
+.admin__header {
+    background-color: #414c63;
+    &.header {
+        max-height: 10rem;
+        justify-content: space-between;
+    }
+}
+.admin__panel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: .5rem 0 .5rem 2rem;
+}
+.admin__avatar {
+    &.avatar {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+.admin__btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 2rem;
+    &-link {
+        color: #fff;
+    }
+}
+.admin__title {
+    padding-left: 1rem;
+    color: #fff;
+}
+.admin__description {
+    padding-left: 1rem;
+    font-size: .8rem;
+    opacity: .4;
+    color: #fff;
+}
 .header {
     display: flex;
     flex-direction: row;

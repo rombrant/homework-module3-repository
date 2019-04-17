@@ -5,13 +5,21 @@ script(type="text/x-template")#reviews-components
                 .controls-up 
             button(@click="next()").controls__block  
                 .controls-down     
-        flickity(ref="flickity" :options="flickityOptions").slider      
+        flickity(ref="flickity" :options="flickityOptions" v-if="reviews.length > 0").slider      
             li.slider__item.carousel-cell(v-for="review in reviews" :key="review.id")
-                q.slider__item-quote {{review.text}}
-                .slider__item-person
-                    img(:src="review.authorPic" alt="аватар автора" ).slider__item-person-img
-                    .title.person
-                        span.title-name {{review['author-name']}}
-                        span.title-about {{review['author-occ']}}
+                review(
+                    :review = "review"
+                        )
+
+
+
+script(type="text/x-template")#review
+    .slider__item-wrapper
+        q.slider__item-quote {{review.text}}
+        .slider__item-person
+            img(:src="review.photo" alt="аватар автора" ).slider__item-person-img
+            .title.person
+                span.title-name {{review.author}}
+                span.title-about {{review.occ}}
 
 
