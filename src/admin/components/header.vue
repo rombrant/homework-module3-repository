@@ -10,16 +10,24 @@
             a.exit-btn(@click="logout") Выйти
             
         .header__title Панель администрирования
-      a.exit-btn(@click="logout") Выйти
+      a.exit-btn(@click="authOut") Выйти
 </template>
 
 <script>
 import { mapActions } from "vuex";
 export default {
   methods: {
-    ...mapActions("user", ["logout"])
+    ...mapActions("user", ["logout"]),
+        async authOut () {
+          try {
+              await this.logout;
+              this.$router.replace('/login');
+          } catch (error) {
+                    console.log(error);
+                }
+     }
   }
-};
+}
 </script>
 
 
